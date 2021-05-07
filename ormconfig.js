@@ -19,6 +19,11 @@ if (process.env.NODE_ENV === "DEV") {
   config = {
     "type": "postgres",
     "url": process.env.DATABASE_URL,
+    "extra": {
+      "ssl": {
+        "rejectUnauthorized": false
+      }
+    },
     "entities": [
       "dist/models/**/*.js"
     ],
